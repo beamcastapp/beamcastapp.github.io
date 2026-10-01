@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+  Pagina demo di Beamcast, inglese (issue #440). La gemella italiana è it/index.html.
+
+  Serve agli screenshot della scheda Play (n. 2: il browser su una pagina nostra, video avviato,
+  pannello dei media aperto) e ai video della #441. Si pubblica su GitHub Pages da un repository
+  pubblico: come, e con quali file, lo dice README.md accanto a questa pagina.
+
+  Il browser di Beamcast rileva i <video> della pagina (DomSniffing.kt): il titolo che l'app mostra
+  in «Media rilevati», in «In onda» e nelle liste è l'attributo title del video, e la copertina è il
+  suo poster. Per questo ogni video ha title e poster, e il title è scritto per chi lo legge sulla TV.
+
+  Nessun sito di terzi, nessun servizio della blocklist, nessun catalogo: tre video con licenza
+  Pexels (uso commerciale, nessuna attribuzione obbligatoria), scelti senza persone né marchi.
+  Il credito in fondo non è richiesto dalla licenza: dice da dove vengono.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Sample videos</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #14212a;
+      --muted: #56656f;
+      --line: #dfe6ea;
+      --accent: #1a6b8a;
+      --page: #f5f8fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    header, main, footer { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+    header { padding-top: 20px; }
+    h1 { font-size: 1.5rem; line-height: 1.25; margin: 0 0 4px; }
+    header p { margin: 0 0 16px; color: var(--muted); }
+    figure {
+      margin: 0 0 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #0e1519; }
+    figcaption { padding: 10px 14px 12px; }
+    figcaption strong { display: block; font-size: 1.05rem; }
+    figcaption span { color: var(--muted); font-size: 0.9rem; }
+    footer { padding-bottom: 28px; color: var(--muted); font-size: 0.85rem; }
+    footer a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sample videos</h1>
+    <p>Three short clips to try casting from a web page: start one, then cast it to your TV.</p>
+  </header>
+  <main>
+    <figure>
+      <video controls playsinline preload="metadata" title="Sunset over the lake"
+             poster="media/sunset-lake.jpg" src="media/sunset-lake.mp4"></video>
+      <figcaption><strong>Sunset over the lake</strong><span>Mountains, 0:42</span></figcaption>
+    </figure>
+    <figure>
+      <video controls playsinline preload="metadata" title="Waves on the shore"
+             poster="media/waves-shore.jpg" src="media/waves-shore.mp4"></video>
+      <figcaption><strong>Waves on the shore</strong><span>From above, 0:20</span></figcaption>
+    </figure>
+    <figure>
+      <video controls playsinline preload="metadata" title="Waterfall in the forest"
+             poster="media/forest-waterfall.jpg" src="media/forest-waterfall.mp4"></video>
+      <figcaption><strong>Waterfall in the forest</strong><span>Green valley, 0:36</span></figcaption>
+    </figure>
+  </main>
+  <footer>
+    <p>Videos from <a href="https://www.pexels.com/license/">Pexels</a>: Tom Fisk, Brunxs, Engin Akyurt.
+      This page exists to show how casting works. <a href="it/">Italiano</a></p>
+  </footer>
+</body>
+</html>

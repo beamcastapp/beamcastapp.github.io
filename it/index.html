@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+  Pagina demo di Beamcast, italiano (issue #440). La gemella inglese è ../index.html, e il perché
+  di ogni scelta sta nel suo commento e in ../README.md. I video sono gli stessi: cambiano solo le
+  parole, e i title dei video, che l'app mostra in «Media rilevati», in «In onda» e nelle liste.
+-->
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Video di esempio</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #14212a;
+      --muted: #56656f;
+      --line: #dfe6ea;
+      --accent: #1a6b8a;
+      --page: #f5f8fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    header, main, footer { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+    header { padding-top: 20px; }
+    h1 { font-size: 1.5rem; line-height: 1.25; margin: 0 0 4px; }
+    header p { margin: 0 0 16px; color: var(--muted); }
+    figure {
+      margin: 0 0 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #0e1519; }
+    figcaption { padding: 10px 14px 12px; }
+    figcaption strong { display: block; font-size: 1.05rem; }
+    figcaption span { color: var(--muted); font-size: 0.9rem; }
+    footer { padding-bottom: 28px; color: var(--muted); font-size: 0.85rem; }
+    footer a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Video di esempio</h1>
+    <p>Tre brevi video per provare a trasmettere da una pagina web: avviane uno, poi mandalo sulla TV.</p>
+  </header>
+  <main>
+    <figure>
+      <video controls playsinline preload="metadata" title="Tramonto sul lago"
+             poster="../media/sunset-lake.jpg" src="../media/sunset-lake.mp4"></video>
+      <figcaption><strong>Tramonto sul lago</strong><span>Montagne, 0:42</span></figcaption>
+    </figure>
+    <figure>
+      <video controls playsinline preload="metadata" title="Onde sulla riva"
+             poster="../media/waves-shore.jpg" src="../media/waves-shore.mp4"></video>
+      <figcaption><strong>Onde sulla riva</strong><span>Dall'alto, 0:20</span></figcaption>
+    </figure>
+    <figure>
+      <video controls playsinline preload="metadata" title="Cascata nel bosco"
+             poster="../media/forest-waterfall.jpg" src="../media/forest-waterfall.mp4"></video>
+      <figcaption><strong>Cascata nel bosco</strong><span>Valle verde, 0:36</span></figcaption>
+    </figure>
+  </main>
+  <footer>
+    <p>Video da <a href="https://www.pexels.com/license/">Pexels</a>: Tom Fisk, Brunxs, Engin Akyurt.
+      Questa pagina serve a mostrare come si trasmette. <a href="../">English</a></p>
+  </footer>
+</body>
+</html>
