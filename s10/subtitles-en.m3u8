@@ -1,0 +1,9 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-PLAYLIST-TYPE:VOD
+# Un segmento solo, lungo quanto il letto video (634,600 s): vedi la NOTE dentro
+# il .vtt per il motivo. TARGETDURATION deve essere >= della durata dichiarata.
+#EXT-X-TARGETDURATION:635
+#EXTINF:634.600,
+subtitles-en.vtt
+#EXT-X-ENDLIST

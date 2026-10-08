@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+  CONTROLLO della fixture S10 (issue #290), e prova della issue #396. Non prova S10.
+
+  Serve a rendere osservabile sul telefono il percorso col picker: davanti a un master
+  con due o più `#EXT-X-STREAM-INF`, BrowserCastFlow apre il picker qualità. Le rendition
+  `#EXT-X-MEDIA:TYPE=SUBTITLES` vivono nel master: fino alla #396 partiva la sola
+  VARIANTE scelta e l'elenco delle tracce restava vuoto; dalla #396 la variante, che
+  referenzia il gruppo dei sottotitoli, parte dentro il master ridotto dal proxy, e le
+  tracce devono esserci.
+
+  Il contenuto è lo stesso di index.html: stesse due rendition di sottotitoli, stesso
+  letto video. Cambia una cosa sola, il numero di varianti. Se qui l'elenco è vuoto e su
+  index.html è pieno, a sbagliare è la riduzione della #396, non le tracce.
+-->
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beamcast - controllo a due varianti (S10)</title>
+</head>
+<body>
+  <h1>Controllo - master a due varianti</h1>
+
+  <p>
+    <strong>Questa pagina non prova S10.</strong> Serve a mostrare cosa succede quando
+    un master HLS dichiara più di una qualità, che è il caso di quasi tutti i siti veri.
+  </p>
+
+  <video title="Controllo - HLS con due varianti" controls playsinline width="320">
+    <source src="master-two-variants.m3u8" type="application/vnd.apple.mpegurl">
+  </video>
+
+  <h2>Cosa deve succedere</h2>
+  <ol>
+    <li>Trasmettendo questo video, l'app apre il <strong>picker della qualità</strong>
+      (che su <a href="index.html">index.html</a> non compare).</li>
+    <li>Scelta una qualità, il video parte come sull'altra pagina, alla qualità scelta.</li>
+    <li>Nel pannello dei sottotitoli l'elenco mostra le <strong>due tracce</strong>,
+      come sull'altra pagina: il master ridotto alla qualità scelta le porta con sé.</li>
+  </ol>
+
+  <p>
+    Se l'elenco resta vuoto qui e non sull'altra pagina, la differenza è tutta nel numero
+    di varianti, cioè nella riduzione del master della issue #396. L'esito va annotato nel
+    commento della issue #396 e in quello della #290.
+  </p>
+</body>
+</html>
