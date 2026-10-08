@@ -1,0 +1,14 @@
+#EXTM3U
+#EXT-X-VERSION:3
+# Fixture dello scenario S10 (issue #290): due tracce di testo incluse nel flusso.
+# UNA SOLA variante, e non è una semplificazione. Con due o più #EXT-X-STREAM-INF
+# il browser di Beamcast apre il picker qualità, e le due rendition qui sotto
+# arriverebbero al receiver solo dentro il master ridotto della issue #396: la prova
+# non sarebbe più delle sole tracce. Quel percorso lo prova master-two-variants.m3u8;
+# il perché sta nel README.
+# DEFAULT=NO e AUTOSELECT=NO sono voluti: la prova deve partire senza sottotitoli,
+# altrimenti una traccia accesa da sola non si distingue da una scelta che funziona.
+#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="subs",NAME="Traccia 1 - italiano",LANGUAGE="it",DEFAULT=NO,AUTOSELECT=NO,FORCED=NO,URI="subtitles-it.m3u8"
+#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="subs",NAME="Track 2 - english",LANGUAGE="en",DEFAULT=NO,AUTOSELECT=NO,FORCED=NO,URI="subtitles-en.m3u8"
+#EXT-X-STREAM-INF:BANDWIDTH=836280,CODECS="mp4a.40.2,avc1.64001f",RESOLUTION=848x480,SUBTITLES="subs"
+https://test-streams.mux.dev/x36xhzz/url_6/193039199_mp4_h264_aac_hq_7.m3u8

@@ -1,0 +1,14 @@
+#EXTM3U
+#EXT-X-VERSION:3
+# CONTROLLO della fixture S10 (issue #290). Identico a master.m3u8 tranne per una
+# cosa: dichiara DUE varianti invece di una.
+# Non serve a provare S10, serve a provare il percorso col picker: qui Beamcast apre
+# il picker qualità, e dalla issue #396 la variante scelta, che referenzia il gruppo
+# "subs", parte dentro questo master ridotto dal proxy. Atteso: le due tracce
+# nell'elenco, come con master.m3u8. Un elenco vuoto è un difetto della #396.
+#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="subs",NAME="Traccia 1 - italiano",LANGUAGE="it",DEFAULT=NO,AUTOSELECT=NO,FORCED=NO,URI="subtitles-it.m3u8"
+#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="subs",NAME="Track 2 - english",LANGUAGE="en",DEFAULT=NO,AUTOSELECT=NO,FORCED=NO,URI="subtitles-en.m3u8"
+#EXT-X-STREAM-INF:BANDWIDTH=836280,CODECS="mp4a.40.2,avc1.64001f",RESOLUTION=848x480,SUBTITLES="subs"
+https://test-streams.mux.dev/x36xhzz/url_6/193039199_mp4_h264_aac_hq_7.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=246440,CODECS="mp4a.40.5,avc1.42000d",RESOLUTION=320x184,SUBTITLES="subs"
+https://test-streams.mux.dev/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8

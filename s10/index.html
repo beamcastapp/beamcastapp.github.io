@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+  Fixture dello scenario S10 della matrice di regressione (issue #290): le tracce di
+  testo INCLUSE in un flusso HLS, scelte dal picker dell'app su Google Cast.
+
+  Dal telefono si apre la copia su https://beamcastapp.github.io/s10/: il browser di
+  Beamcast non apre pagine in chiaro (policy di rete, issue #137), quindi servita dal PC
+  questa pagina non si aprirebbe.
+
+  Istruzioni complete (come si aggiorna la copia, perché il master ha una variante sola,
+  cosa deve succedere a ogni passo) nel README.md di docs/hls-text-tracks-fixture/.
+
+  La pagina non fa niente di speciale, ed è voluto: dichiara un <video> il cui unico
+  <source> è il master HLS della fixture. Serve perché il flusso passi dal browser
+  interno di Beamcast come nell'uso vero, e non da una scorciatoia. Lo sniffing DOM
+  legge `<source>.src` risolto, quindi il media viene rilevato anche se il telefono
+  non riesce a riprodurlo.
+
+  Un solo media rilevabile per pagina, di proposito: il controllo a due varianti sta
+  su control-two-variants.html, così durante la misura non c'è modo di trasmettere
+  quello sbagliato.
+-->
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beamcast - fixture tracce di testo HLS (S10)</title>
+</head>
+<body>
+  <h1>Fixture S10 - tracce di testo incluse nel flusso HLS</h1>
+
+  <p>
+    Questo video HLS porta <strong>due</strong> tracce di sottotitoli dentro il flusso:
+    <em>Traccia 1 - italiano</em> e <em>Track 2 - english</em>. Nessuna delle due parte
+    accesa: vanno scelte a mano dal pannello dei sottotitoli dell'app.
+  </p>
+
+  <video title="S10 - HLS con due tracce di testo" controls playsinline width="320">
+    <source src="master.m3u8" type="application/vnd.apple.mpegurl">
+  </video>
+
+  <h2>Se il riquadro qui sopra resta nero</h2>
+  <p>
+    <strong>Non è un guasto della fixture.</strong> Il browser del telefono può non
+    riprodurre l'HLS da solo: l'HLS lo legge il dispositivo di destinazione, non il
+    telefono. Quel che conta per questa prova è che il video compaia nell'elenco dei
+    media rilevati di Beamcast, con il titolo <em>S10 - HLS con due tracce di testo</em>.
+  </p>
+
+  <h2>Cosa fare</h2>
+  <ol>
+    <li>Aprire il pannello dei media rilevati e trasmettere questo video su un
+      dispositivo <strong>Google Cast</strong>.</li>
+    <li>A video partito, aprire i sottotitoli dalla schermata "In onda": le due tracce
+      devono comparire nell'elenco.</li>
+    <li>Sceglierle a turno e verificare che il testo cambi <em>sulla TV</em>, poi che
+      "Nessuno" lo tolga davvero.</li>
+  </ol>
+  <p>La checklist completa, passo per passo, sta nel commento della issue #290.</p>
+
+  <h2>Controllo</h2>
+  <p>
+    <a href="control-two-variants.html">control-two-variants.html</a> serve lo
+    <strong>stesso</strong> contenuto con un master a due varianti. Non prova S10:
+    dimostra perché il master di questa pagina ne dichiara una sola.
+  </p>
+</body>
+</html>

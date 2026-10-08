@@ -1,0 +1,12 @@
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:900000,LOCAL:00:00:00.000
+
+NOTE
+Una battuta sola che copre tutto il video invece di tante brevi: il testo deve
+restare leggibile dal divano per l'intera prova, e una battuta lunga è immune a
+qualunque scarto di allineamento fra i tempi del WebVTT e i PTS del transport
+stream. MPEGTS:900000 sono 10 s, cioè il PTS del primo fotogramma del letto
+video: misurato sul primo segmento (10,033 s), non supposto. Vedi il README.
+
+00:00:00.000 --> 00:10:34.600
+TRACCIA 1 - italiano
