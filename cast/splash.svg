@@ -31,12 +31,15 @@
   <!-- Il logo al centro, che contro la ritenzione sugli OLED scivola di ±0,6 vw in 240 s. -->
   <g>
     <animateTransform attributeName="transform" type="translate" values="0 0;9.6 -6.4;-8 8;6.4 9.6;0 0" keyTimes="0;0.25;0.5;0.75;1" dur="240s" repeatCount="indefinite"/>
-    <!-- Il glifo, 5,4 vw: il fascio e la punta, e il punto che respira in 4 s. -->
+    <!--
+      Il glifo, 5,4 vw: il fascio e la punta, e il punto che respira in 4 s. Parte acceso, al
+      contrario della #584 (0,3 → 1 → 0,3): stesso ritmo, e fermato al primo fotogramma resta acceso.
+    -->
     <g fill="#87cff0" transform="translate(568.93 406.8) scale(1.542857) translate(-25 -27)">
       <path d="M38.2,66.2 L59.9,33.9 L74.1,48.1 L41.8,69.8 Z"/>
       <path d="M80,28 L73.2,53.2 L54.8,34.8 Z"/>
       <circle cx="33" cy="75" r="7">
-        <animate attributeName="opacity" values="0.3;1;0.3" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.3;1" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" dur="4s" repeatCount="indefinite"/>
       </circle>
     </g>
     <!-- «Beamcast», 4,6 vw a 1,5 vw dal glifo: i tracciati di Inter ExtraBold della #584, linea di base a y = 0. -->

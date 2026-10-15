@@ -3,7 +3,10 @@
  * Solo indirizzi relativi, così la skin non dipende dall'host. Guida in docs/cast-skin/README.md.
  */
 
-/* Lo sfondo, a tinta piatta: anche ai lati di una foto verticale e intorno alla copertina di un audio. */
+/*
+ * Lo sfondo, a tinta piatta. Dovrebbe vedersi anche ai lati di una foto verticale e intorno alla
+ * copertina di un audio: lo dirà la prova sulla TV (#585).
+ */
 .background {
   background: #0b171d;
 }
