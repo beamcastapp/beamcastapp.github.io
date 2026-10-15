@@ -1,0 +1,35 @@
+/*
+ * Beamcast, la skin dello Styled Media Receiver (issue #585): la grafica «Il fascio» della #584.
+ * Solo indirizzi relativi, così la skin non dipende dall'host. Guida in docs/cast-skin/README.md.
+ */
+
+/*
+ * Lo sfondo, a tinta piatta. Dovrebbe vedersi anche ai lati di una foto verticale e intorno alla
+ * copertina di un audio: lo dirà la prova sulla TV (#585).
+ */
+.background {
+  background: #0b171d;
+}
+
+/* Mentre il ricevitore si avvia: il glifo e «Beamcast», al centro di un quadro 16:9 a pieno schermo. */
+.logo {
+  background-image: url(logo.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* In attesa: il fascio in grande e il logo al centro, con la luce e il punto che respira. */
+.splash {
+  background-image: url(splash.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* La barra della riproduzione, nell'azzurro del marchio. */
+.progressBar {
+  background-color: #87cff0;
+}
+
+/* .watermark: nessuna, di proposito. */
